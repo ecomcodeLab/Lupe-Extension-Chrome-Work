@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
   "name": "Web-Lupe Pro",
-  "version": "1.4",
+  "version": "1.5",
   "author": "ecomcodelab.de (https://github.com/ecomcodeLab)",
   "description": "Hochpräzise Lupe mit Color-Picker. Aktivierung via Icon oder Shortcuts. (Hinweis: Funktioniert nicht auf chrome:// Seiten)",
   "permissions": [
@@ -13,6 +13,11 @@
   "host_permissions": [
     "<all_urls>"
   ],
+  "icons": {
+    "16": "icon16.png",
+    "48": "icon48.png",
+    "128": "icon128.png"
+  },
   "background": {
     "service_worker": "background.js"
   },
@@ -24,7 +29,12 @@
     }
   ],
   "action": {
-    "default_title": "Lupe aktivieren"
+    "default_title": "Lupe aktivieren",
+    "default_icon": {
+      "16": "icon16.png",
+      "48": "icon48.png",
+      "128": "icon128.png"
+    }
   },
   "options_page": "options.html"
 }
