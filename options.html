@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <title>Lupe & Picker Einstellungen</title>
+  <style>
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      background: #f0f2f5;
+      display: flex;
+      justify-content: center;
+      padding: 40px;
+      margin: 0;
+    }
+    .container {
+      background: white;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+      width: 380px;
+    }
+    h1 { font-size: 1.3rem; margin-top: 0; color: #1c1e21; border-bottom: 1px solid #eee; padding-bottom: 10px; }
+    .row { margin-bottom: 20px; }
+    label { display: block; margin-bottom: 8px; font-weight: 600; color: #4b4f56; font-size: 0.9rem; }
+    .input-flex { display: flex; align-items: center; gap: 15px; }
+    input[type="range"] { flex: 1; }
+    .val { width: 50px; font-weight: bold; color: #1877f2; text-align: right; }
+    
+    input[type="text"] {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      font-size: 14px;
+      box-sizing: border-box;
+      background: #f9f9f9;
+      cursor: pointer;
+    }
+    input[type="text"]:focus {
+      outline: none;
+      border-color: #1877f2;
+      background: #fff;
+      box-shadow: 0 0 0 2px rgba(24,119,242,0.2);
+    }
+
+    .save-msg { 
+      margin-top: 15px; 
+      color: #fff;
+      background: #42b72a;
+      padding: 10px;
+      border-radius: 6px;
+      font-weight: bold; 
+      text-align: center; 
+      opacity: 0;
+      transition: opacity 0.3s;
+    }
+
+    .footer {
+      margin-top: 25px;
+      text-align: center;
+      font-size: 0.85rem;
+      color: #888;
+      border-top: 1px solid #eee;
+      padding-top: 15px;
+    }
+    .footer a {
+      color: #1877f2;
+      text-decoration: none;
+      font-weight: 600;
+    }
+    .footer a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>🔍 Lupe & Color-Picker</h1>
+    
+    <div class="row">
+      <label>Lupe Zoom-Faktor</label>
+      <div class="input-flex">
+        <input type="range" id="zoom" min="1.2" max="10" step="0.1" value="2">
+        <span class="val" id="zoom-text">2.0x</span>
+      </div>
+    </div>
+
+    <div class="row">
+      <label>Lupengröße (px)</label>
+      <div class="input-flex">
+        <input type="range" id="size" min="100" max="600" step="10" value="250">
+        <span class="val" id="size-text">250px</span>
+      </div>
+    </div>
+
+    <div class="row">
+      <label>Shortcut: Lupe An/Aus (Klicken & Tasten drücken)</label>
+      <input type="text" id="toggleKey" readonly placeholder="Z.B. Alt+KeyZ">
+    </div>
+
+    <div class="row">
+      <label>Shortcut: Farbe kopieren (Klicken & Tasten drücken)</label>
+      <input type="text" id="colorKey" readonly placeholder="Z.B. Alt+KeyC">
+    </div>
+
+    <div class="save-msg" id="status">Änderungen gespeichert!</div>
+
+    <div class="footer">
+      Entwickelt von <a href="https://github.com/ecomcodeLab" target="_blank" rel="noopener">ecomcodelab.de</a>
+    </div>
+  </div>
+  <script src="options.js"></script>
+</body>
+</html>
